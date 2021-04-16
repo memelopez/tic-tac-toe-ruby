@@ -1,0 +1,22 @@
+{
+  "name": "tic-tac-toe-ruby",
+  "version": "1.0.0",
+  "description": "microverse ruby module project tic tac toe game ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memelopez/tic-tac-toe-ruby.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/memelopez/tic-tac-toe-ruby/issues"
+  },
+  "homepage": "https://github.com/memelopez/tic-tac-toe-ruby#readme"
+}
