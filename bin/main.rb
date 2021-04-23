@@ -31,8 +31,6 @@ puts 'Great! We are all set.'
 puts "#{player_one.name} will play #{player_one.mark}s and #{player_two.name} will play #{player_two.mark}s."
 puts official_board.print_board
 
-play_target = -1
-
 while official_board.plays_count < 9
   if official_board.plays_count.even?
     puts "Its #{player_one.name}'s turn. Enter a valid board position to play: "
