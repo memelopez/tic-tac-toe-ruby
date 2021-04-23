@@ -1,4 +1,4 @@
-#lib/player.rb
+# lib/player.rb
 class Player
   attr_reader :name, :mark
   attr_accessor :plays

@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
 require_relative '../lib/player'
 require_relative '../lib/board'
 
@@ -46,4 +45,3 @@ while official_board.plays_count < 9
   end
   puts official_board.print_board
 end
-# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength

@@ -1,4 +1,4 @@
-#lib/board.rb
+# lib/board.rb
 class Board
   attr_reader :cells, :plays_count
 
