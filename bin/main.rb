@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
 require_relative '../lib/player'
 require_relative '../lib/board'
 
@@ -14,10 +15,10 @@ _______ _          _______             _______
 puts "Welcome to the game. Let's get started! \nPlease enter name for player 1 (X): "
 player_one = gets.strip.capitalize
 
-puts "Enter name for player 2 (0): "
+puts 'Enter name for player 2 (0): '
 player_two = gets.strip.capitalize
 
-while player_one == player_two do
+until player_one != player_two
   puts "Please enter another name for the player 2 (0), different from #{player_one}: "
   player_two = gets.strip.capitalize
 end
@@ -25,22 +26,24 @@ end
 player_one = Player.new(player_one, 'X')
 player_two = Player.new(player_two, '0')
 
-official_board = Board.new 
+official_board = Board.new
 
-puts "Great! We are all set. #{player_one.name} will play #{player_one.mark}s and #{player_two.name} will play #{player_two.mark}s."
+puts 'Great! We are all set.'
+puts "#{player_one.name} will play #{player_one.mark}s and #{player_two.name} will play #{player_two.mark}s."
 puts official_board.print_board
 
 play_target = -1
 
-while official_board.plays_count < 9 do
-  if (official_board.plays_count % 2 == 0) 
+while official_board.plays_count < 9
+  if official_board.plays_count.even?
     puts "Its #{player_one.name}'s turn. Enter a valid board position to play: "
     play_target = gets.chomp
     official_board.update_cell(play_target, player_one.mark)
-  else 
+  else
     puts "Its #{player_two.name}'s turn. Enter a valid board position to play: "
     play_target = gets.chomp
     official_board.update_cell(play_target, player_two.mark)
   end
   puts official_board.print_board
 end
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
