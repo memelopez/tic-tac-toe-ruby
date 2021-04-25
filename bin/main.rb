@@ -58,18 +58,18 @@ puts official_board.print_board
 
 while official_board.plays_count < 9
   if official_board.plays_count.even?
-    puts "Its #{player_one.name}'s turn. Enter a valid board position to play: "
+    puts "Its #{player_one.name}'s turn. Enter the position you want to mark: "
     play_target = gets.to_i
-    until valid_position?(play_target)
-      puts 'Please enter a valid position in the board. (1-9)'
+    until valid_position?(play_target) && official_board.free_cell?(play_target)
+      puts 'Please enter a valid position in the board (1-9) that is not marked already.'
       play_target = gets.to_i
     end
     official_board.update_cell(play_target, player_one.mark)
   else
-    puts "Its #{player_two.name}'s turn. Enter a valid board position to play: "
+    puts "Its #{player_two.name}'s turn. Enter the position you want to mark: "
     play_target = gets.to_i
-    until valid_position?(play_target)
-      puts 'Please enter a valid position in the board. (1-9)'
+    until valid_position?(play_target) && official_board.free_cell?(play_target)
+      puts 'Please enter a valid position in the board (1-9) that is not marked already.'
       play_target = gets.to_i
     end
     official_board.update_cell(play_target, player_two.mark)

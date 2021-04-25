@@ -22,4 +22,10 @@ class Board
     @cells[index.to_i - 1] = value
     @plays_count += 1
   end
+
+  def free_cell?(index)
+    return false if @cells[index - 1] == 'X' || @cells[index - 1] == '0'
+
+    true
+  end
 end
