@@ -10,6 +10,6 @@ class Player
   end
 
   def plyr2string
-    %(Player #{@name} marks #{@mark} plays: #{@plays})
+    %(Player :: #{@name} -- marks :: #{@mark} -- plays: #{@plays} --<< )
   end
 end
