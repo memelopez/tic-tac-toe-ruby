@@ -49,7 +49,7 @@ until official_game.game_over?
   play_target = gets.to_i
 
   until valid_position?(play_target) && official_game.available_pos?(play_target)
-    puts "#{official_game.whos_turn_player.name}, please enter a valid position in the board(1-9) that is not marked yet."
+    puts "#{official_game.whos_turn_player.name}, please enter a valid position in the board(1-9) that is not marked."
     play_target = gets.to_i
   end
 

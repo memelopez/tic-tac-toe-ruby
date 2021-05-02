@@ -1,4 +1,5 @@
 # lib/board.rb
+# rubocop:disable Layout/LineLength
 
 require_relative '../lib/player'
 require_relative '../lib/board'
@@ -74,3 +75,4 @@ class Game
     -----------------------------------)
   end
 end
+# rubocop:enable Layout/LineLength
