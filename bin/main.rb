@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require_relative '../lib/player'
-require_relative '../lib/board'
 require_relative '../lib/game'
 
 def valid_position?(value)
@@ -39,27 +38,26 @@ while player_one == player_two
   end
 end
 
-player_one = Player.new(player_one, 'X')
-player_two = Player.new(player_two, '0')
-
-official_game = Game.new(player_one, player_two)
+official_game = Game.new(Player.new(player_one, 'X'), Player.new(player_two, '0'))
 
 puts official_game.beginning_message
-puts official_game.display_board
 
-begin
-  puts "It's #{official_game.whos_turn_player.name}'s turn.(#{official_game.whos_turn_player.mark})."
+until official_game.game_over?
+  puts official_game.display_board
+  puts "It's #{official_game.whos_turn_player.name}'s turn.(#{official_game.whos_turn_player.mark})"
   puts 'Enter the position you want to mark: '
   play_target = gets.to_i
 
   until valid_position?(play_target) && official_game.available_pos?(play_target)
-    puts "#{official_game.whos_turn_player.name}, please enter a valid position in the board (1-9) that is not marked already."
+    puts "#{official_game.whos_turn_player.name}, please enter a valid position in the board(1-9) that is not marked yet."
     play_target = gets.to_i
   end
 
   official_game.make_play(play_target, official_game.whos_turn_player.mark)
-  puts official_game.display_board
 
-end while !official_game.game_over?
+  # puts official_game.game2string
 
+end
+
+puts official_game.display_board
 puts official_game.show_result

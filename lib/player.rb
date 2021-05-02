@@ -12,4 +12,8 @@ class Player
   def plyr2string
     %(Player :: #{@name} -- marks :: #{@mark} -- plays: #{@plays} --<< )
   end
+
+  def add_play(pos)
+    @plays.push(pos - 1)
+  end
 end

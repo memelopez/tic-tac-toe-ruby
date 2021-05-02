@@ -4,7 +4,6 @@ class Board
 
   def initialize
     @cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    @plays_count = 0
   end
 
   def print_board
@@ -20,7 +19,6 @@ class Board
 
   def update_cell(index, value)
     @cells[index.to_i - 1] = value
-    @plays_count += 1
   end
 
   def free_cell?(index)
