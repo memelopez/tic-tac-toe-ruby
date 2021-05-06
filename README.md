@@ -4,9 +4,9 @@
 
 > Tic tac toe game (X - 0). Built with Ruby. Played in the command line or console. The simplest form of the commonly know game where the winner is the first to connect 3 marks.
 
-![screenshot](./img/intro.png)
-![screenshot](./img/game.png)
-![screenshot](./img/winner.png)
+<img src="./img/intro.png" width="600">
+<img src="./img/game.png" width="600">
+<img src="./img/winner.png" width="600">
 
 Additional description about the project and its features.
 
