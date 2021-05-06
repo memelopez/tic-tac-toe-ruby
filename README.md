@@ -5,21 +5,18 @@
 > Tic tac toe game (X - 0). Built with Ruby. Played in the command line or console. The simplest form of the commonly know game where the winner is the first to connect 3 marks.
 
 <img src="./img/intro.png" width="600">
-<img src="./img/game.png" width="600">
-<img src="./img/winner.png" width="600">
+First, te game asks for the name of the two players.
 
-Additional description about the project and its features.
+<img src="./img/game.png" width="600">
+Players will take turns to choose an available position in the board. 
+
+<img src="./img/winner.png" width="600">
+If a players is succesfull in connecting 3 Xs or 0s then he is declared the winner! 
+
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
 
 ## Getting Started
 
