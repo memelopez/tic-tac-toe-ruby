@@ -7,12 +7,15 @@
 ---
 
 First, te game asks for the name of the two players.
+
 <img src="./img/intro.png" width="600">
 
 Players will take turns to choose an available position in the board.
+
 <img src="./img/game.png" width="600"> 
 
 If a players is succesfull in connecting 3 Xs or 0s then he is declared the winner! 
+
 <img src="./img/winner.png" width="600">
 
 ## Tic tac toe rules
@@ -45,7 +48,7 @@ If a players is succesfull in connecting 3 Xs or 0s then he is declared the winn
 
 1. Git clone this repo
 2. cd into folder
-3. run: Ruby ./bin/main.rb
+3. Run: Ruby ./bin/main.rb
 
 ## Author
 
