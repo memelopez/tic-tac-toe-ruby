@@ -30,9 +30,9 @@ If a players is succesfull in connecting 3 Xs or 0s then he is declared the winn
 
 ## Getting Started
 
-**To download this project git:**
+**To download this project:**
 
- Clone it and then run the ruby command on the main file that is in the bin directory.
+ Git clone it and then run the ruby command on the main file that is in the bin directory.
 
 ### Prerequisites
 
