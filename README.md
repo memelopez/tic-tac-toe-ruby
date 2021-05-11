@@ -2,7 +2,7 @@
 
 # Tic Tac Toe 
 
-> Tic tac toe game (X - 0). Built with Ruby. Played in the command line or console. The simplest form of the commonly know game where the winner is the first to connect 3 marks.
+> Tic tac toe game (X - 0). Built with Ruby. Played in the command line or console. The simplest form of the commonly known game where the winner is the first to connect 3 marks.
 
 ---
 
@@ -20,7 +20,7 @@ If a players is succesfull in connecting 3 Xs or 0s then he is declared the winn
 
 ## Tic tac toe rules
 
-- In a grid of 3 x 3 , with nine available positions, the players take turns to mark each cell until one player can connect 3 of his marks in a row.
+- In a grid of 3 x 3 , with nine available positions, the players take turns to mark a cell at a time until one player can connect 3 of his marks in a row.
 - The three connected marks can be horizontal, vertical or diagonal.
 - Once a cell has been marked it cannot be marked again. 
 
