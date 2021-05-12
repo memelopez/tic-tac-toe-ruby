@@ -17,4 +17,16 @@ describe Board do
     ))
     end
   end
+
+  describe '#update_cell' do
+    it "asigns a value to board's array" do
+      expect(board.update_cell(1, 'X')).to eql('X')
+    end
+  end
+
+  describe '#free_cell?' do
+    it 'returns a booean value if a certain cell is available' do
+      expect(board.free_cell?(1)).to be(true).or be(false)
+    end
+  end
 end
