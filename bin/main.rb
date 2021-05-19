@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: false
+
 require_relative '../lib/player'
 require_relative '../lib/game'
 

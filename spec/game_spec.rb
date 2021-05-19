@@ -1,8 +1,11 @@
 # spec/board_spec.rb
+# frozen_string_literal: false
+
+# rubocop:disable Metrics/BlockLength
 
 require_relative '../lib/player'
 require_relative '../lib/board'
-require_relative '../lib/Game'
+require_relative '../lib/game'
 
 describe Game do
   let(:p1) { Player.new('Messi', 'X') }
@@ -77,3 +80,4 @@ describe Game do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

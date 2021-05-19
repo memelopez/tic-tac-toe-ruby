@@ -1,4 +1,7 @@
 # lib/board.rb
+# frozen_string_literal: false
+
+# Class that represents the playing board
 class Board
   attr_reader :cells, :plays_count
 
