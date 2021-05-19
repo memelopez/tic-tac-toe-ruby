@@ -1,5 +1,4 @@
 # lib/player.rb
-# frozen_string_literal: false
 
 # Class that represents each player
 class Player

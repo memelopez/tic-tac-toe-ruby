@@ -1,7 +1,4 @@
 # spec/board_spec.rb
-# frozen_string_literal: false
-
-# rubocop:disable Metrics/BlockLength
 
 require_relative '../lib/player'
 require_relative '../lib/board'
@@ -80,4 +77,3 @@ describe Game do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength

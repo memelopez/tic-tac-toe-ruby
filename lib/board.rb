@@ -1,5 +1,4 @@
 # lib/board.rb
-# frozen_string_literal: false
 
 # Class that represents the playing board
 class Board

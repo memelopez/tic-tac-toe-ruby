@@ -1,5 +1,4 @@
 # spec/board_spec.rb
-# frozen_string_literal: false
 
 require_relative '../lib/board'
 

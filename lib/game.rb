@@ -1,5 +1,4 @@
 # lib/game.rb
-# frozen_string_literal: false
 
 # rubocop:disable Layout/LineLength
 
