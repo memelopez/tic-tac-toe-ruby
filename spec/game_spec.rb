@@ -11,16 +11,19 @@ describe Game do
   let(:game) { Game.new(p1, p2) }
 
   describe '#beginning_message' do
-    it 'returns a string with the beginning message' do
-      expect(game.beginning_message).to eql(%(Great! We are all set.
+    context 'when game is about to start' do
+      it 'returns a string with the beginning message' do
+        expect(game.beginning_message).to eql(%(Great! We are all set.
 #{p1.name} will play #{p1.mark}s and #{p2.name} will play #{p2.mark}s.\n
 ))
+      end
     end
   end
 
   describe '#display_board' do
-    it 'returns a string that represents the board' do
-      expect(game.display_board).to eql(%(+ --- + --- + --- +
+    context 'when printing board' do
+      it 'returns a string that represents the board' do
+        expect(game.display_board).to eql(%(+ --- + --- + --- +
    #{board.cells[0]}  |  #{board.cells[1]}  |  #{board.cells[2]}
 + --- + --- + --- +
    #{board.cells[3]}  |  #{board.cells[4]}  |  #{board.cells[5]}
@@ -28,36 +31,64 @@ describe Game do
    #{board.cells[6]}  |  #{board.cells[7]}  |  #{board.cells[8]}
 + --- + --- + --- +
     ))
+      end
     end
   end
 
   describe '#whos_turn_player' do
-    it 'returns a player of class player' do
-      expect(game.whos_turn_player).to eql(p1)
+    context "when asking who's turn it is" do
+      it 'returns a player of class player' do
+        expect(game.whos_turn_player).to eql(p1)
+      end
     end
   end
 
   describe '#game_over?' do
-    it 'returns boolean value if the game has finished' do
-      expect(game.game_over?).to be(true).or be(false)
+    context 'when asking if game should continue' do
+      it 'returns FALSE if the game has not finished' do
+        expect(game.game_over?).to be_falsey
+      end
+
+      it 'returns TRUE when play_count >= 9 (DRAW)' do
+        game.play_count = 9
+        expect(game.game_over?).to be_truthy
+      end
+
+      it 'returns TRUE when a player has made a winning move' do
+        game.game_over = true
+        expect(game.game_over?).to be_truthy
+      end
     end
   end
 
   describe '#winning_move?' do
-    it 'returns boolean value verifying if last move is a winning move' do
-      expect(game.winning_move?([0])).to be(true).or be(false)
+    context 'when asking if the last move shoiuld finish the game' do
+      it 'returns FALSE if a player does not have a winning combo' do
+        expect(game.winning_move?([0])).to be_falsey
+      end
+      it 'returns TRUE if a player does have a winning combo in his plays' do
+        expect(game.winning_move?([0, 1, 2])).to be_truthy
+      end
     end
   end
 
   describe '#available_pos?' do
-    it 'returns boolean value depending if position is available' do
-      expect(game.available_pos?(0)).to be(true).or be(false)
+    context 'when verifying if a position is available' do
+      it 'returns TRUE if a cell is avaible' do
+        expect(game.available_pos?(1)).to be_truthy
+      end
+      it 'returns FALSE if a cell is not avaible' do
+        game.make_play(1, 'X')
+        expect(game.available_pos?(1)).to be_falsey
+      end
     end
   end
 
   describe '#make_play' do
-    it 'returns the play count after updating the board and verifying if it is a winning move' do
-      expect(game.make_play(0, 'X')).to eql(1)
+    context 'when making a play' do
+      it 'returns the play count after updating the board and verifying if it is a winning move' do
+        expect(game.make_play(0, 'X')).to eql(1)
+      end
     end
   end
 
