@@ -6,7 +6,7 @@ describe Player do
   let(:plyr1) { Player.new('Leo Messi', 'X') }
 
   describe '#plyr2string' do
-    context 'when asking a player for his info' do
+    context "when asking for player's info" do
       it "returns a string with player's name and mark" do
         expect(plyr1.plyr2string).to eql('Player :: Leo Messi -- marks :: X -- plays: [] --<< ')
       end

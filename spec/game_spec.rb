@@ -44,7 +44,7 @@ describe Game do
   end
 
   describe '#game_over?' do
-    context 'when asking if game should continue' do
+    context 'when asking if game should be stopped' do
       it 'returns FALSE if the game has not finished' do
         expect(game.game_over?).to be_falsey
       end
@@ -62,7 +62,7 @@ describe Game do
   end
 
   describe '#winning_move?' do
-    context 'when asking if the last move shoiuld finish the game' do
+    context 'when asking if the last move should finish the game' do
       it 'returns FALSE if a player does not have a winning combo' do
         expect(game.winning_move?([0])).to be_falsey
       end
@@ -93,18 +93,30 @@ describe Game do
   end
 
   describe '#show_result' do
-    it 'returns a string with the game result' do
-      expect(game.show_result).to eql("It's a draw!")
+    context 'when asking for the game result' do
+      it 'returns a string with initial game result' do
+        expect(game.show_result).to eql("It's a draw!")
+      end
+      it 'returns a string with player who just made a winning move' do
+        game.make_play(1, 'X')
+        game.make_play(4, '0')
+        game.make_play(2, 'X')
+        game.make_play(5, '0')
+        game.make_play(3, 'X')
+        expect(game.show_result).to eql("#{p1.name} wins!")
+      end
     end
   end
 
   describe '#game2string' do
-    it 'returns a string with the variables of the game' do
-      expect(game.game2string).to eql(%(------------- GAME -------------
+    context 'when asking for game information' do
+      it 'returns a string with the variables of the game' do
+        expect(game.game2string).to eql(%(------------- GAME -------------
     Player 1: #{p2.name}'#{p1.mark}' plays: #{p1.plays}
     Player 2: #{p2.name}'#{p2.mark}' plays: #{p2.plays}
     Play count: 0 and result: It's a draw!
     -----------------------------------))
+      end
     end
   end
 end

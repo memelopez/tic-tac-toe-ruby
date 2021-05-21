@@ -21,8 +21,8 @@ describe Board do
   end
 
   describe '#update_cell' do
-    context 'when marking a cel in the board' do
-      it "asigns a value to board's array" do
+    context 'when marking a cell in the board' do
+      it 'returns the mark, char value' do
         expect(board.update_cell(1, 'X')).to eql('X')
       end
     end
@@ -30,10 +30,10 @@ describe Board do
 
   describe '#free_cell?' do
     context 'when verifying if a cell is available' do
-      it 'returns true when a cell is available' do
+      it 'returns TRUE when a cell is available' do
         expect(board.free_cell?(1)).to be_truthy
       end
-      it 'returns false when a certain cell is already marked' do
+      it 'returns FALSE when a certain cell is already marked' do
         board.update_cell(1, 'X')
         expect(board.free_cell?(1)).to be_falsey
       end
