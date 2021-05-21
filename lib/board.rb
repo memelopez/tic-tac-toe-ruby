@@ -1,4 +1,6 @@
 # lib/board.rb
+
+# Class that represents the playing board
 class Board
   attr_reader :cells, :plays_count
 

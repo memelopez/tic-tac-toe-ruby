@@ -1,4 +1,6 @@
 # lib/player.rb
+
+# Class that represents each player
 class Player
   attr_reader :name, :mark
   attr_accessor :plays

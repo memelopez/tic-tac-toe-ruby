@@ -1,11 +1,15 @@
-# lib/board.rb
+# lib/game.rb
+
 # rubocop:disable Layout/LineLength
 
 require_relative '../lib/player'
 require_relative '../lib/board'
 
+# Class that manages the game
 class Game
   WIN_COMBINATION = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [6, 4, 2], [0, 4, 8]].freeze
+
+  attr_accessor :play_count, :game_over
 
   def initialize(player_one, player_two)
     @player_one = player_one
